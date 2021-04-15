@@ -35,8 +35,9 @@ function setup() {
 	
 
 	//Create a Ground
-	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
- 	World.add(world, ground);
+	ground = new Ground(width/2, height-50, 200, 60 );
+	//ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+ 	//World.add(world, ground);
 	 
 
 	 bottom = new Box(width/2,height-50,200,20);
@@ -54,13 +55,13 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 
-  
+  ground.display();
   Engine.update(engine);
   bottom.display();
   right.display();
   left.display();
   
-  //drawSprites();
+  drawSprites();
  
 }
 
